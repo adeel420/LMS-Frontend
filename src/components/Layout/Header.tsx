@@ -1,9 +1,20 @@
-import React from 'react';
-import { Bell, User, Settings } from 'lucide-react';
+import React, { useState } from 'react';
+import { Bell, User, Settings, ChevronDown, LogOut } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
+import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
+const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+
+const handleLogout = () => {
+    setIsDropdownOpen(false);
+    localStorage.removeItem('token');
+    logout(); // Auth context ka logout function call karein
+    navigate('/login'); // Explicit login page path
+  };
 
   const getRoleBasedTitle = () => {
     switch (user?.role) {
@@ -57,7 +68,7 @@ const Header: React.FC = () => {
               </button>
             </div>
             
-            <div className="flex items-center gap-3 bg-gray-50 rounded-lg px-3 py-2">
+            {/* <div className="flex items-center gap-3 bg-gray-50 rounded-lg px-3 py-2">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
                 <User size={16} className="text-white" />
               </div>
@@ -65,7 +76,35 @@ const Header: React.FC = () => {
                 <span className="text-sm font-semibold text-gray-700 block">{user?.name}</span>
                 <span className="text-xs text-gray-500 capitalize">{user?.role}</span>
               </div>
-            </div>
+            </div> */}
+          <div className="relative">
+  <button 
+    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+    className="flex items-center gap-3 bg-gray-50 rounded-lg px-3 py-2 w-full hover:bg-gray-100 transition-colors"
+  >
+    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+      <User size={16} className="text-white" />
+    </div>
+    <div className="text-left flex-1">
+      <span className="text-sm font-semibold text-gray-700 block">{user?.name}</span>
+      <span className="text-xs text-gray-500 capitalize">{user?.role}</span>
+    </div>
+    <ChevronDown size={16} className={`text-gray-500 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+  </button>
+
+  {isDropdownOpen && (
+    <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50">
+      <button
+        onClick={handleLogout}
+        className="w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
+      >
+        <LogOut size={16} />
+        <span>Logout</span>
+      </button>
+    </div>
+  )}
+{/* </div> */}
+</div>
 
             <button className="p-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-colors">
               <Settings size={20} />
