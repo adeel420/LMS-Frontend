@@ -64,10 +64,10 @@ const MainApp: React.FC = () => {
           return <UserManagement />;
         case 'courses':
           return <TaskManagement />;
-        case 'reports':
-          return <div className="p-6">Reports (Coming Soon)</div>;
-        case 'settings':
-          return <div className="p-6">System Settings (Coming Soon)</div>;
+        // case 'reports':
+        //   return <div className="p-6">Reports (Coming Soon)</div>;
+        // case 'settings':
+        //   return <div className="p-6">System Settings (Coming Soon)</div>;
         default:
           return <AdminDashboard activeSection={activeSection} />;
       }

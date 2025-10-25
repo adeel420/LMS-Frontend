@@ -55,8 +55,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
           ...baseItems,
           { id: 'users', label: 'User Management', icon: Users, color: 'bg-blue-500' },
           { id: 'courses', label: 'Course Management', icon: BookOpen, color: 'bg-blue-500' },
-          { id: 'reports', label: 'Reports', icon: FileText, color: 'bg-blue-500' },
-          { id: 'settings', label: 'System Settings', icon: Settings, color: 'bg-blue-500' }
+          // { id: 'reports', label: 'Reports', icon: FileText, color: 'bg-blue-500' },
+          // { id: 'settings', label: 'System Settings', icon: Settings, color: 'bg-blue-500' }
         ];
       
       case 'learner':
