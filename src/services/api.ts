@@ -1,4 +1,5 @@
 const API_BASE_URL = 'https://lms-backend-pj3v.onrender.com/api';
+// const API_BASE_URL = 'http://localhost:5000/api';
 
 class ApiService {
   private getAuthHeaders() {
@@ -27,10 +28,10 @@ class ApiService {
   }
 
   // Auth
-  async login(username: string, password: string) {
+  async login(username: string, password: string, captcha: string) {
     return this.request('/auth/login', {
       method: 'POST',
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ username, password, captcha })
     });
   }
 

@@ -5,7 +5,7 @@ import { apiService } from '../services/api';
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  login: (username: string, password: string) => Promise<boolean>;
+  login: (username: string, password: string, captcha: string) => Promise<boolean>;
   logout: () => void;
   setUser: (user: User | null) => void;
 }
@@ -98,9 +98,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, []);
 
-  const login = async (username: string, password: string): Promise<boolean> => {
+  const login = async (username: string, password: string, captcha: string): Promise<boolean> => {
     try {
-      const response = await apiService.login(username, password);
+      const response = await apiService.login(username, password, captcha);
       localStorage.setItem('token', response.token);
       
       const userData: User = {
