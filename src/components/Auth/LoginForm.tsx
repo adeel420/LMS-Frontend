@@ -65,32 +65,20 @@ const LoginForm: React.FC = () => {
 
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex flex-col md:flex-row">
       {/* Left Side - Login Form (40%) */}
-      <div className="w-full md:w-2/5 bg-gray-50 flex items-center justify-center p-4">
-        <div className="w-full max-w-sm">
-          <div className="bg-white rounded-3xl shadow-lg p-8">
+      <div className="w-full md:w-2/5 bg-gray-50 flex items-center justify-center p-4 md:p-8">
+        <div className="w-full max-w-sm mx-auto">
+          <div className="bg-white rounded-3xl shadow-lg p-6 sm:p-8">
             {/* Logo and Header */}
-            <div className="text-center mb-8">
-              <div className="flex justify-center mb-6">
-                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="60" cy="20" r="4" fill="#1e5ba8" />
-                  <circle cx="48" cy="28" r="3" fill="#1e5ba8" />
-                  <circle cx="72" cy="28" r="3" fill="#1e5ba8" />
-                  <path d="M 60 35 L 75 45 L 75 50 Q 75 55 70 55 L 50 55 Q 45 55 45 50 L 45 45 Z" fill="#1e5ba8" />
-                  <rect x="58" y="55" width="4" height="12" fill="#1e5ba8" />
-                  <rect x="48" y="48" width="24" height="4" fill="#1e5ba8" opacity="0.8" />
-                  <rect x="48" y="52" width="24" height="4" fill="#1e5ba8" opacity="0.6" />
-                  <path d="M 45 65 Q 40 70 38 80 Q 40 75 45 72" stroke="#1e5ba8" strokeWidth="2" fill="none" />
-                  <path d="M 42 68 Q 35 75 32 85 Q 35 78 42 73" stroke="#1e5ba8" strokeWidth="2" fill="none" />
-                  <path d="M 75 65 Q 80 70 82 80 Q 80 75 75 72" stroke="#1e5ba8" strokeWidth="2" fill="none" />
-                  <path d="M 78 68 Q 85 75 88 85 Q 85 78 78 73" stroke="#1e5ba8" strokeWidth="2" fill="none" />
-                </svg>
+            <div className="text-center mb-6 sm:mb-8">
+              <div className="flex justify-center mb-4 sm:mb-6">
+               <img src="./images/logo.jpeg" alt="LMS Logo" className="w-24 h-24 sm:w-32 sm:h-32 object-contain" />
               </div>
 
-              <h1 className="text-3xl font-bold text-blue-700 mb-2">Welcome to</h1>
-              <h2 className="text-3xl font-bold text-blue-700 mb-4">LMS</h2>
-              <p className="text-gray-600 text-sm">Please enter your credentials to login</p>
+              <h1 className="text-2xl sm:text-3xl font-bold text-blue-700 mb-2">Welcome to</h1>
+              <h2 className="text-2xl sm:text-3xl font-bold text-blue-700 mb-3 sm:mb-4">LMS</h2>
+              <p className="text-gray-600 text-xs sm:text-sm">Please enter your credentials to login</p>
             </div>
 
             {/* Form Fields */}
