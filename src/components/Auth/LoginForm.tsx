@@ -65,15 +65,15 @@ const LoginForm: React.FC = () => {
 
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
+   <div className="min-h-screen flex flex-col md:flex-row">
       {/* Left Side - Login Form (40%) */}
-      <div className="w-full md:w-2/5 bg-gray-50 flex items-center justify-center p-4 md:p-8">
-        <div className="w-full max-w-sm mx-auto">
+      <div className="w-full md:w-[40%] bg-gray-50 flex items-center justify-start ">
+        <div className="w-full max-w-[100%]">
           <div className="bg-white rounded-3xl shadow-lg p-6 sm:p-8">
             {/* Logo and Header */}
             <div className="text-center mb-6 sm:mb-8">
               <div className="flex justify-center mb-4 sm:mb-6">
-               <img src="./images/logo.jpeg" alt="LMS Logo" className="w-24 h-24 sm:w-32 sm:h-32 object-contain" />
+               <img src="https://res.cloudinary.com/dyyuwwbaq/image/upload/v1761506439/logo_wb1grw.jpg" alt="LMS Logo" className="w-24 h-24 sm:w-32 sm:h-32 object-contain" />
               </div>
 
               <h1 className="text-2xl sm:text-3xl font-bold text-blue-700 mb-2">Welcome to</h1>
@@ -96,7 +96,7 @@ const LoginForm: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-gray-600 text-sm font-medium mb-2">Password</label>
+                <label className="block text-blue-600 text-sm font-medium mb-2">Password</label>
                 <input
                   type="password"
                   name="password"
@@ -108,7 +108,7 @@ const LoginForm: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-gray-600 text-sm font-medium mb-2">Captcha</label>
+                <label className="block text-blue-600 text-sm font-medium mb-2">Captcha</label>
                 <div className="flex items-center gap-3 mb-2">
                   <div className="flex gap-1 text-2xl font-bold bg-gray-100 px-3 py-2 rounded">
                     {captchaCode.split('').map((char, idx) => {
