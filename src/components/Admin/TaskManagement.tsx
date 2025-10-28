@@ -100,8 +100,8 @@ const TaskManagement: React.FC = () => {
     setFormData({
       title: task.title,
       description: task.description,
-      learnerId: task.learner._id,
-      accessorId: task.accessor._id
+      learnerId: task.learner?._id || '',
+      accessorId: task.accessor?._id || ''
     });
   };
 
@@ -181,12 +181,12 @@ const TaskManagement: React.FC = () => {
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-900">{task.learner.username}</div>
-                  <div className="text-sm text-gray-500">{task.learner.email}</div>
+                  <div className="text-sm text-gray-900">{task.learner?.username || 'N/A'}</div>
+                  <div className="text-sm text-gray-500">{task.learner?.email || 'N/A'}</div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-900">{task.accessor.username}</div>
-                  <div className="text-sm text-gray-500">{task.accessor.email}</div>
+                  <div className="text-sm text-gray-900">{task.accessor?.username || 'N/A'}</div>
+                  <div className="text-sm text-gray-500">{task.accessor?.email || 'N/A'}</div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
