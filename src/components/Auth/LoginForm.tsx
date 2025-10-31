@@ -67,9 +67,9 @@ const LoginForm: React.FC = () => {
   return (
    <div className="min-h-screen flex flex-col md:flex-row">
       {/* Left Side - Login Form (40%) */}
-      <div className="w-full md:w-[40%] bg-gray-50 flex items-center justify-start ">
-        <div className="w-full max-w-[100%]">
-          <div className="bg-white rounded-3xl shadow-lg p-6 sm:p-8">
+     <div className="w-full md:w-[40%] bg-gray-50 flex items-center justify-center">
+        <div className="w-full h-full">
+          <div className="bg-white md:rounded-3xl shadow-lg h-full p-6 sm:p-8 flex flex-col justify-center">
             {/* Logo and Header */}
             <div className="text-center mb-6 sm:mb-8">
               <div className="flex justify-center mb-4 sm:mb-6">
